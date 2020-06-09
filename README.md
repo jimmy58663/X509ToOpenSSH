@@ -15,9 +15,9 @@ The Key is made up of 3 parts which are each broken down into length and data.
 	Part 2: Exponent, 4 bytes for length, and then the RSA exponent value which is commonly 65537
 			Example: 65537
 				Length: 00000003 - 4 bytes saying the next piece of data is 3 bytes in length
-				Data: 010001 - 65537 converted to hexadecimal
+				Data: 010001 - 65537 converted to a byte array and then hex values
 				
-	Part 3: Modulus, 4 bytes for the length, and then the modulus of the public key. 1 additional byte is added to the lenth and prepends the modulus value with 00
+	Part 3: Modulus, 4 bytes for the length, and then the modulus of the public key. 1 additional byte is added to the length and prepends the modulus value with 00
 			Example: wrq57U..idQ== (2048 bit key)
 				Length: 00000101 - 4 bytes saying the next piece of data is 257 bytes in length ((2048 / 8) + 1)
 				Data: 00c2ba..762275 - the modulus converted to bytes and then hexadecimal preprended by 00
